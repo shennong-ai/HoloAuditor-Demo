@@ -29,3 +29,16 @@ To ensure full transparency and accessibility for researchers without Python/Col
     * **What it proves:** The root cause of the LLM collapse. This log summarizes our full-scale scan, revealing the massive volume of "Generic Noise" contaminating the SFT datasets.
 * 📄 **`04 & 05_SFT_Audit_Detailed_Analysis_Part1/2.txt`**
     * **What it proves:** Deep-dive empirical evidence. Contains specific case-by-case proof (e.g., 12,245 cases) where traditional semantic guardrails (V6.0) failed, but our topological guardrail (V6.5) successfully flagged the hidden ontological fouls.
+
+## 📚 Data Availability & Acknowledgements
+
+The empirical audits and topological manifold embeddings in this study rely on several publicly available databases. We deeply acknowledge the original creators for advancing open science and medical informatics in Traditional Chinese Medicine (TCM). 
+
+The raw data sources audited in our research include:
+
+* **SymMap Database**: Used as the foundational relational knowledge graph for constructing our pre-computational topological manifold.
+  > **Citation**: Wu, Y., et al. (2019). SymMap: an integrative database of traditional Chinese medicine enhanced by symptom mapping. *Nucleic Acids Research*, 47(D1), D1110-D1117.
+* **ShenNong & TCM-SFT Datasets**: The massive instruction-tuning datasets evaluated in our contamination audit (the 39k+ cases) are derived from publicly available TCM Large Language Model initiatives (e.g., ShenNong-TCM / open-source instruction tuning datasets). 
+* **Zero-Shot Evaluation Benchmark**: The 100 high-quality, expert-verified cases used to demonstrate the 6.0% "Semantic Sorting Collapse" are extracted and strictly isolated from the aforementioned knowledge graphs to prevent data leakage. 
+
+**Academic License Note**: The exported audit logs provided in the `/data_evidence` directory of this repository are intended strictly for academic peer-review, algorithmic auditing, and reproducibility purposes. They do not contain executable topological code, ensuring compliance with the original licenses of the respective datasets while protecting the intellectual property of the `HoloAuditor` framework currently under peer review.
