@@ -42,3 +42,5 @@ The raw data sources audited in our research include:
 * **Zero-Shot Evaluation Benchmark**: The 100 high-quality, expert-verified cases used to demonstrate the 6.0% "Semantic Sorting Collapse" are extracted and strictly isolated from the aforementioned knowledge graphs to prevent data leakage. 
 
 **Academic License Note**: The exported audit logs provided in the `/data_evidence` directory of this repository are intended strictly for academic peer-review, algorithmic auditing, and reproducibility purposes. They do not contain executable topological code, ensuring compliance with the original licenses of the respective datasets while protecting the intellectual property of the `HoloAuditor` framework currently under peer review.
+
+🔗 **Preprint Paper:** [Scaling Laws Hit a Wall (SSRN 6368538 - Under Review)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6368538)
