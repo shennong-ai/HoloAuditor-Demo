@@ -5,6 +5,11 @@ This repository provides the empirical dataset audit logs supporting our preprin
 
 We hypothesize that the 6.0% "Semantic Sorting Collapse" observed in next-generation LLMs is fundamentally driven by severe generic noise in Supervised Fine-Tuning (SFT) datasets. 
 
+[![SSRN](https://img.shields.io/badge/SSRN-Preprint_Published-blue.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6368538)
+Read our foundational paper on mitigating LLM collapse via topological manifolds.
+
+
+
 ## 📊 The Proof: HoloTSH Dataset Distiller (V3.1)
 Using our `HoloAuditor` topological guardrail (V6.5) against a baseline semantic text guardrail (V6.0), we scanned massive TCM polypharmacy datasets. The results provide concrete evidence of structural contamination:
 
