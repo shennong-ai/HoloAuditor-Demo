@@ -49,3 +49,25 @@ The raw data sources audited in our research include:
 **Academic License Note**: The exported audit logs provided in the `/data_evidence` directory of this repository are intended strictly for academic peer-review, algorithmic auditing, and reproducibility purposes. They do not contain executable topological code, ensuring compliance with the original licenses of the respective datasets while protecting the intellectual property of the `HoloAuditor` framework currently under peer review.
 
 🔗 **Preprint Paper:** [Scaling Laws Hit a Wall (SSRN 6368538 - Under Review)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6368538)
+
+
+---
+
+## Reproducibility (added 2026-10)
+
+Every headline number is independently recomputable from the artefacts in this repository:
+
+| Claim | Recompute script | Input artefact | Agreement |
+|---|---|---|---|
+| Run-1 native Hit@1/3 (Gemini 2.5 Pro 33/36; GLM-4-Flash 42/46) | `scripts/recompute_run1.py` | `data_evidence/02_Ablation_GLM4_vs_Gemini2.5Pro.txt` | exact |
+| Run-1 guarded Hit@1 = 45 (33 preserved + 12 rescued, 0 broken) | `scripts/recompute_run1.py` | same (100 logged reranks) | exact |
+| Run-2 collapse Hit@1 = 6.0 -> 24.0 (n=100, empty returns = miss) | `scripts/recompute_run2.py` | `data_evidence/01_Gemini_3.1Pro_ZeroShot_Collapse.txt` | exact |
+| Popularity bias: 64% / 54% for the two generic dual-deficiency labels | `scripts/recompute_run2.py` | same (100 output lists) | exact |
+| Dataset audit cross-tab (39,635 + 209,684 pairs, four categories) | `scripts/recompute_dataset_audit.py` | `data/sft_comparison_full.csv`, `data/shennong_comparison_full.zip` | exact |
+| Audit scoring latency 0.163 ms/query (desktop CPU) | `scripts/benchmark_audit_latency.py` | manifold size 1,851 x 64 as logged | measured |
+
+Notes: run-1 logs truncate candidate printing at 4 items, so engine-side Hit@5 is authoritative;
+run-2 Hit@3/Hit@5 are computed over the 98 questions with non-empty returns. Per-class breakdown
+and the majority-class baseline (53.0%) are reported in the manuscript under submission and in
+`figures/`. The core manifold-construction code remains redacted pending intellectual-property
+review; it is available to reviewers on request and does not affect any recomputation above.
