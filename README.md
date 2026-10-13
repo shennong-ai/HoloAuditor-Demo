@@ -71,3 +71,16 @@ run-2 Hit@3/Hit@5 are computed over the 98 questions with non-empty returns. Per
 and the majority-class baseline (53.0%) are reported in the manuscript under submission and in
 `figures/`. The core manifold-construction code remains redacted pending intellectual-property
 review; it is available to reviewers on request and does not affect any recomputation above.
+
+
+## Matched-temperature replication (completed 2026-10)
+
+The decoding-temperature confound between the two examination runs (t=0.3 vs t=0.1) has
+been retired experimentally: the collapsed model (Gemini 3.1 Pro) was re-run on the same
+seed-42 100-case benchmark at the matched temperature (t=0.3, same prompt template, 15
+candidates, Google API endpoint). Strict Hit@1 = 4.0% (4/100) — versus the predecessor's
+33.0% at the same temperature (two-proportion z = -5.28, p < 10^-6). The collapse persists
+when decoding temperature is equalised. Per-case results:
+`data/replication_temperature_t03_results.json`; re-run script:
+`scripts/replication_temperature_t03.py` (OpenRouter-served 27-case partial) and
+`scripts/replication_temperature_resume.py` (Google-API completion).
